@@ -1,0 +1,140 @@
+:root {
+    --border-color: rgb(255, 193, 203);
+    --background: rgb(230, 240, 230);
+    --front-bg: rgb(255, 255, 255);
+    --front-bg-darken: rgb(112, 177, 193);
+    --shadow: rgba(0, 0, 0, 0.1);
+    --drop-shadow: rgba(0, 0, 0, 0.5);
+    --text: #331717;
+  }
+  
+  html,
+  body {
+    overflow: hidden;
+    background-color: #808080;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card {
+    position: relative;
+    width: 425px;
+    height: 300px;
+    border: 10px solid var(--border-color);
+    margin: 360px auto;
+    box-shadow: inset 10px 0px 15px 0px var(--shadow);
+    background-color: var(--background);
+  }
+  
+  .card .textContainer {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+  }
+  
+  .card .textContainer #header {
+    font-size: 2rem;
+    margin: 40px auto;
+  }
+  
+  .card p {
+    font-family: 'Roboto';
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: var(--text);
+    font-style: italic;
+    text-align: center;
+    margin: 30px auto;
+  }
+  
+  .card .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: -10px 0px 0px -10px;
+    border: 10px solid var(--border-color);
+    backface-visibility: hidden;
+    background-color: var(--front-bg);
+    background-size: contain;
+    transform-style: preserve-3d;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(0deg);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  .card:hover .front {
+    transform: perspective(800px) rotateX(170deg);
+  }
+  
+  .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 10px solid var(--border-color);
+    margin: -10px 0px 0px -10px;
+    backface-visibility: visible;
+    filter: drop-shadow(2px 2px 4px var(--drop-shadow));
+    transform-style: preserve-3d;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(0deg);
+    transition: all 0.8s ease-in-out;
+    background-color: var(--background);
+    box-shadow: 0 0 0 0 var(--shadow);
+  }
+  
+  .card:hover .back {
+    transform: perspective(800px) rotateX(170deg);
+    box-shadow: 0px 5px 10px 0px var(--shadow), inset 2px 0px 15px 0px var(--shadow);
+  }
+
+body {
+    background-image: url("https://img.freepik.com/free-photo/paper-valentines-day-hearts-pink_1220-3682.jpg?w=2000");
+    background-size: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10%;
+    color: rgb(251, 107, 107);
+    
+    font-family: 'Valentine', sans-serif;
+}
+
+button {
+    width: 105px;
+    height: 35px;
+    margin: 25px;
+    border-radius: 8px;
+    border: solid 3px palevioletred;
+    background-color: rgb(251, 107, 107);
+    color: black;
+
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+
+    font-family: monospace;
+}
+
+button:active {
+    transform: translateY(4px);
+}
+
+.textContainer {
+    text-align: center;
+}
+
+#header {
+    color: rgb(251, 107, 107);
+    font-family: 'heart emboss', sans-serif;
+    font-family: 'heartfont', sans-serif;
+}
+
+
+img {
+    width: 199px;
+}
+
+.front {
+    text-align: center;
+}
